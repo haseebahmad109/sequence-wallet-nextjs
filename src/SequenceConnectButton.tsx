@@ -17,8 +17,9 @@ const SequenceConnectButton = ({
         setOpenConnectModal(true)
         
       }}
+      className="uppercase p-4 border border-solid border-separate flex gap-3 items-center justify-center"
     >
-      <span className="uppercase flex gap-3 items-center justify-center">
+      <span>
         Connect Sequence Wallet
       </span>
     </button>
