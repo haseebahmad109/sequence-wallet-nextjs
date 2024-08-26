@@ -1,6 +1,21 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import Providers from "@/Providers";
+
+import dynamic from 'next/dynamic'
+
+const Providers = dynamic(
+  () => import('@/Providers'),
+  {
+    ssr: false,
+  }
+)
+
+const SequenceConnectButton = dynamic(
+  () => import('@/SequenceConnectButton'),
+  {
+    ssr: false,
+  }
+)
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -9,7 +24,11 @@ export default function Home() {
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
-      <Providers>OK</Providers>
+      <Providers>
+
+        <SequenceConnectButton />
+
+      </Providers>
     </main>
   );
 }
